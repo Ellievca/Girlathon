@@ -1,27 +1,23 @@
 import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Chatbot from './Chatbot';
 
 function App() {
-  const handleClick = () => {
-    alert("Button clicked!");
-  };
-
   return (
-    <div style={{ padding: "2rem", textAlign: "center" }}>
-      <h1>Welcome to My Web App</h1>
-      <button 
-        onClick={handleClick}
-        style={{
-          padding: "0.75rem 1.5rem",
-          fontSize: "1rem",
-          cursor: "pointer",
-          borderRadius: "8px",
-          border: "none",
-          backgroundColor: "#007BFF",
-          color: "white"
-        }}
-      >
-        Click Me
-      </button>
+    <div style={{ textAlign: 'center' }}>
+      <nav style={{ marginBottom: '1rem' }}>
+        <Link to="/" style={{ margin: '0 1rem' }}>home</Link>
+        <Link to="/chatbot" style={{margin: '0 1rem'}}>chatbot</Link>
+        <Link to="/about" style={{ margin: '0 1rem' }}>about</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/chatbot" element={<Chatbot />} />
+      </Routes>
     </div>
   );
 }
