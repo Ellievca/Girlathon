@@ -53,7 +53,7 @@ function Home() {
         overflow: 'hidden', // so top bar doesn't overflow
       }}
     >
-      {/* Top bar with retro Windows buttons */}
+      {/* Top bar with Windows buttons */}
       <div
         style={{
           height: '40px',

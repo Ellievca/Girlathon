@@ -18,8 +18,8 @@ const Navbar = () => {
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <h2 style={{ margin: 0, fontWeight: '600', color: 'var(--color-accent, #00d4ff)' }}>
-          Hello
+        <h2 style={{ margin: 0, fontWeight: '600', color: 'var(--color-text, #00d4ff)' }}>
+          GRWM bot!
         </h2>
         {/* You can throw a logo here if you want */}
       </div>
