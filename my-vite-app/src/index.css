@@ -4,8 +4,9 @@
   font-weight: 400;
 
   /* color palette */
-  --color-background: #EDAFB8;
+  --color-background: #F7E1D7;
   --color-text: #F7E1D7;
+  --color-primary: #EDAFB8;
   --color-accent: #B0C4B1;
 
   /* system UI smoothing */
@@ -66,7 +67,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #ffffff;
   }
   button {
     background-color: #f9f9f9;

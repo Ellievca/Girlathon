@@ -5,14 +5,14 @@ function Home() {
   return (
     <div
       style={{
-        height: '100vh',
-        width: '100vw',
-        margin: 0,
+        height: '75vh',
+        width: '70vw',
+        margin: '1rem auto',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#121212', // test background color
+        backgroundColor: 'var(--color-background)', // test background color
         color: 'white',
         textAlign: 'center',
       }}
@@ -23,8 +23,8 @@ function Home() {
           style={{
             padding: '0.75rem 1.5rem',
             fontSize: '1.2rem',
-            backgroundColor: '#00bcd4',
-            color: '#121212',
+            backgroundColor: 'var(--color-accent)',
+            color: '#FFFFFF',
             border: 'none',
             borderRadius: '8px',
             cursor: 'pointer',
