@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -21,7 +21,6 @@ const Navbar = () => {
         <h2 style={{ margin: 0, fontWeight: '600', color: 'var(--color-text, #00d4ff)' }}>
           GRWM bot!
         </h2>
-        {/* You can throw a logo here if you want */}
       </div>
 
       <div style={{ display: 'flex', gap: '1.5rem' }}>
@@ -42,3 +41,4 @@ const linkStyle = {
 };
 
 export default Navbar;
+*/
