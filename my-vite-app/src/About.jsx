@@ -2,19 +2,19 @@ import React from 'react';
 
 function About() {
   return (
-    <div
+    <div 
       style={{
-        height: '100vh',
-        width: '100vw',
-        margin: 0,
+        height: '75vh',
+        width: '70vw',
+        margin: '1rem auto',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'var(--color-background)',
+        backgroundColor: 'var(--color-background)', // test background color
         color: 'white',
         textAlign: 'center',
-        padding: '2rem',
+        borderTop: '25px solid #EDAFB8',
       }}
     >
       <h1>about page!</h1>

@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+
+.window-style {
+  height: 75vh;
+  width: 70vw;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background);
+  color: white;
+  text-align: center;
+}
+
