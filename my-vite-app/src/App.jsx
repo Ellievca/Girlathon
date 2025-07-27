@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
@@ -8,6 +8,24 @@ import './fonts.css';
 
 function App() {
   const navigate = useNavigate();
+
+  // Mouse click sound
+  useEffect(() => {
+    const clickSound = new Audio('/mouse_click_sound.mp3'); 
+
+    const handleClick = () => {
+      clickSound.currentTime = 0;
+      clickSound.play().catch((e) => {
+        // prevents autoplay
+      });
+    };
+
+    window.addEventListener('click', handleClick);
+
+    return () => {
+      window.removeEventListener('click', handleClick);
+    };
+  }, []);
 
   return (
     <div
@@ -66,7 +84,7 @@ function App() {
         </div>
 
         <div
-          onClick={() => window.open('https://github.com/Ellievca/Girlathon', '_blank')}
+          onClick={() => window.open('https://github.com/Ellievca/Girlathon-GRWM-Bot', '_blank')}
           style={iconStyle}
         >
           <img
