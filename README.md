@@ -11,6 +11,6 @@ Your go-to bestie for all things makeup, skincare, outfits, and glow-up tips �
 **Github** -> View the source code (Opens in a new tab) 
 
 Simply type in the chatbot and hit send to start chatting!
-(*Note: The chatbot is currently not functional due to OpenAI key restrictions on public repos, however it is something we'd like to work on finding a solution in the future. Please see the YouTube video here -> (insert link) to see the bot in action!*)
+(*Note: The chatbot is currently not functional due to OpenAI key restrictions on public repos, however it is something we'd like to work on finding a solution in the future. Please see the YouTube video here -> https://www.youtube.com/watch?v=L3QbFynvps0&ab_channel=AvaRomero to see the bot in action!*)
 
 Have fun styling, girlies! 💖🫶
