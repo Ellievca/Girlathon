@@ -32,7 +32,9 @@ function Chatbot() {
     }
 
     try {
-      const response = await fetch('', {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+      
+      const response = await fetch('${backendUrl}/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input }),
