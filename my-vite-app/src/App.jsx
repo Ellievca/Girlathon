@@ -3,8 +3,8 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Chatbot from './Chatbot';
-/*import Navbar from './Navbar';*/
 import WindowWrapper from './WindowWrapper';
+import './fonts.css';
 
 function App() {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ function App() {
       <div
         style={{
           position: 'absolute',
-          top: '2rem',
+          top: '3rem',
           left: '2rem',
           display: 'flex',
           flexDirection: 'column',
@@ -34,9 +34,9 @@ function App() {
           style={iconStyle}
         >
           <img
-            src="/folder-icon.png"    /* or “/icons/folder-icon.png” if you put it in public/icons/ */
+            src="/pngs/home_logo.png"    /* or “/icons/folder-icon.png” if you put it in public/icons/ */
             alt="Home"
-            style={{ width: '50px', height: '50px', marginBottom: '4px' }}
+            style={{ width: '55px', height: '55px', marginBottom: '4px', boxShadow: '0 4px 12px rgba(0,0,0,0.5)', borderRadius: '8px' }}
           />
           <div style={labelStyle}>home</div>
         </div>
@@ -46,9 +46,9 @@ function App() {
           style={iconStyle}
         >
           <img
-            src="/folder-icon.png"    /* or “/icons/folder-icon.png” if you put it in public/icons/ */
+            src="/pngs/grwm_logo.png"    /* or “/icons/folder-icon.png” if you put it in public/icons/ */
             alt="Chatbot"
-            style={{ width: '50px', height: '50px', marginBottom: '4px' }}
+            style={{ width: '55px', height: '55px', marginBottom: '4px', boxShadow: '0 4px 12px rgba(0,0,0,0.5)', borderRadius: '8px' }}
           />
           <div style={labelStyle}>chatbot</div>
         </div>
@@ -58,9 +58,9 @@ function App() {
           style={iconStyle}
         >
           <img
-            src="/folder-icon.png"    /* or “/icons/folder-icon.png” if you put it in public/icons/ */
+            src="/pngs/about_logo.png"    /* or “/icons/folder-icon.png” if you put it in public/icons/ */
             alt="About"
-            style={{ width: '50px', height: '50px', marginBottom: '4px' }}
+            style={{ width: '55px', height: '55px', marginBottom: '4px', boxShadow: '0 4px 12px rgba(0,0,0,0.5)', borderRadius: '8px' }}
           />
           <div style={labelStyle}>about</div>
         </div>
@@ -105,6 +105,8 @@ const iconStyle = {
 const labelStyle = {
   fontSize: '1rem',
   marginTop: '0.25rem',
+  textShadow: '1px 1px 3px rgba(0,0,0,0.8)',
+  color: 'white',
 };
 
 export default App;

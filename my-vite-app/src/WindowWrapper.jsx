@@ -2,7 +2,7 @@ function WindowWrapper({ children }) {
   return (
     <div
       style={{
-        backgroundImage: 'url("/grwmbot-background.png', 
+        backgroundImage: 'url("/pngs/grwmbot-background.png', 
         backgroundSize: 'cover',      // fill the screen
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',

@@ -82,7 +82,7 @@ function Home() {
           padding: '1rem',
         }}
       >
-        <h1 style={{ marginBottom: '1rem' }}>home page!</h1>
+        <h1 style={{ fontFamily: 'Cheri', fontSize: '3rem', marginBottom: '1rem' }}>home page!</h1>
         <Link to="/chatbot">
           <button
             style={{
