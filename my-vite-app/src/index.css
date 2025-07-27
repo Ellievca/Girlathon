@@ -50,7 +50,6 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
-  cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
@@ -72,4 +71,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+body {
+  cursor: url('/pngs/cursor_icon.png') 0 0, auto;
 }

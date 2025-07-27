@@ -64,6 +64,19 @@ function App() {
           />
           <div style={labelStyle}>about</div>
         </div>
+
+        <div
+          onClick={() => window.open('https://github.com/Ellievca/Girlathon', '_blank')}
+          style={iconStyle}
+        >
+          <img
+            src="/pngs/github_logo.png"    /* or “/icons/folder-icon.png” if you put it in public/icons/ */
+            alt="Home"
+            style={{ width: '55px', height: '55px', marginBottom: '4px', boxShadow: '0 4px 12px rgba(0,0,0,0.5)', borderRadius: '8px' }}
+          />
+          <div style={labelStyle}>github</div>
+        </div>
+
       </div>
 
       {/* Main Window */}
@@ -98,12 +111,12 @@ const iconStyle = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  cursor: 'pointer',
   textAlign: 'center',
 };
 
 const labelStyle = {
   fontSize: '1rem',
+  fontWeight: '500',
   marginTop: '0.25rem',
   textShadow: '1px 1px 3px rgba(0,0,0,0.8)',
   color: 'white',

@@ -13,7 +13,6 @@ function RetroWindowButtons() {
     color: '#333',
     fontWeight: 'bold',
     fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif',
-    cursor: 'pointer',
     userSelect: 'none',
     boxShadow: 'inset 1px 1px 0 #fff, inset -1px -1px 0 #aaa',
     marginRight: '8px',
@@ -93,7 +92,6 @@ function Home() {
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '20px',
-              cursor: 'pointer',
               transition: 'all 0.3s ease-in-out',
             }}
           >
