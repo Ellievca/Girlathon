@@ -81,7 +81,7 @@ function About() {
           alignItems: 'center',
         }}
       >
-        <h1 style={{ marginBottom: '1rem' }}>about page!</h1>
+        <h1 style={{ fontFamily: 'Cheri, sans-serif', WebkitTextStroke: '3px #EDAFB8', marginBottom: '1rem' }}>about page!</h1>
         <p>hi we're team girlathon and we made this for cs girlies hackathon!</p>
       </div>
     </div>

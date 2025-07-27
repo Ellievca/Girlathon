@@ -82,18 +82,19 @@ function Home() {
           padding: '1rem',
         }}
       >
-        <h1 style={{ fontFamily: 'Cheri', fontSize: '3rem', marginBottom: '1rem' }}>home page!</h1>
+        <h1 style={{ fontFamily: 'Cheri, sans-serif', WebkitTextStroke: '3px #EDAFB8', marginBottom: '1rem' }}>home page!</h1>
         <Link to="/chatbot">
           <button
             style={{
               padding: '0.75rem 1.5rem',
+              fontFamily: 'Cheri, sans-serif',
               fontSize: '1.2rem',
               backgroundColor: 'var(--color-accent)',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '20px',
               cursor: 'pointer',
-              transition: 'all 0.2s ease-in-out',
+              transition: 'all 0.3s ease-in-out',
             }}
           >
             get started

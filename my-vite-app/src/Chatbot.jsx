@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import RetroWindowButtons from './WindowButtons';
 
 function Chatbot() {
   const [input, setInput] = useState('');
@@ -24,7 +25,7 @@ function Chatbot() {
 
     // If message isn't GRWM related, reply with polite reminder
     if (!containsGRWM(input)) {
-      const politeReply = "I'm here to help with GRWM (Get Ready With Me) questions! Please ask me something about makeup, skincare, outfits, or beauty tips 💖✨";
+      const politeReply = "i'm here to help with grwm (get ready with me) questions! please ask me something about makeup, skincare, outfits, or beauty tips 💖✨";
       setChatHistory(prev => [...prev, { sender: 'bot', text: politeReply }]);
       setInput('');
       return;
@@ -42,7 +43,7 @@ function Chatbot() {
       setChatHistory(prev => [...prev, { sender: 'bot', text: data.response }]);
       setInput('');
     } catch (error) {
-      const errorReply = "Oops, something went wrong. Please try again later 💕";
+      const errorReply = "oops, something went wrong. please try again later 💕";
       setChatHistory(prev => [...prev, { sender: 'bot', text: errorReply }]);
       setInput('');
     }
@@ -51,24 +52,22 @@ function Chatbot() {
   const emojis = ['💖', '✨', '💕', '🌸', '💗'];
 
   return (
-    <div style={{
-      height: '100vh',
-      width: '100vw',
-      margin: 0,
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-      background: 'transparent',
-      fontFamily: "'Comic Sans MS', cursive, sans-serif",
-      color: '#3a003a',
-      textAlign: 'center',
-      paddingTop: '10rem',
-      boxSizing: 'border-box',
-      overflow: 'hidden',
-      position: 'relative',
-      paddingBottom: '3rem',
-    }}>
+    <div
+      style={{
+        height: '75vh',
+        width: '70vw',
+        margin: '1rem auto',
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: 'transparent',
+        color: 'white',
+        borderRadius: '12px',
+        boxShadow: '0 0 15px rgba(0,0,0,0.5)',
+        overflow: 'hidden',
+        position: 'relative',
+
+      }}
+    >
       {/* Floating emoji background */}
       <style>{`
         @keyframes floatEmojis {
@@ -81,45 +80,28 @@ function Chatbot() {
         }
       `}</style>
 
-      {/* Fixed Header */}
-      <h1 style={{
-        fontWeight: 'bold',
-        fontSize: '4rem',
-        marginBottom: '3rem',
-        zIndex: 10,
-        position: 'fixed',
-        top: '1rem',
-        background: 'linear-gradient(45deg,rgb(161, 40, 100), #ff99cc)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        width: '100%',
-        textAlign: 'center',
-        userSelect: 'none',
-        pointerEvents: 'none',
-        animation: 'glowPulse 3s ease-in-out infinite',
-      }}>
-        💖 GRWM Chatbox 💖
-      </h1>
+      {/* Top bar with Windows buttons */}
+      <div
+        style={{
+          height: '40px',
+          zIndex: 1,
+          backgroundColor: '#EDAFB8',
+          display: 'flex',
+          alignItems: 'center',
+          padding: '0 1rem',
+          gap: '0.75rem',
+          borderTopLeftRadius: '12px',
+          borderTopRightRadius: '12px',
+          color: 'white',
+          animation: 'glowPulse 3s ease-in-out infinite',
+        }}
+      >
+        <RetroWindowButtons />
+      </div>
 
-      {/* Chatbox wrapper */}
+      
+      {/* Emoji background */}
       <div style={{
-        position: 'relative',
-        zIndex: 5,
-        width: '750px',
-        maxWidth: '95vw',
-        minHeight: '500px',
-        borderRadius: '40px',
-        padding: '4rem 3rem 3rem 3rem',
-        background: 'linear-gradient(135deg,rgb(255, 182, 193) 0%, #ffb6c1 100%)',
-        boxShadow: '0 0 30px #ff69b4cc, 0 0 60px #ffb6c1cc',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'stretch',
-        overflow: 'hidden',
-        border: '4px solid #ff66b2',
-      }}>
-        {/* Emoji background */}
-        <div style={{
           position: 'absolute',
           top: 0, left: 0, right: 0, bottom: 0,
           fontSize: '3rem',
@@ -145,102 +127,114 @@ function Chatbot() {
           })}
         </div>
 
-        {/* Chat UI container */}
-        <div style={{
-          position: 'relative',
-          zIndex: 1,
-          borderRadius: '30px',
-          padding: '2rem',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'stretch',
-          minHeight: '420px',
-          background: 'transparent',
-          color: '#900048',
-          fontWeight: '600',
-          fontSize: '1.3rem',
+      {/* Chat UI */}
+      <div style={{
+        position: 'relative',
+        zIndex: 1,
+        flex: 1,
+        alignItems: 'stretch',
+        padding: '1rem',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        fontWeight: '600',
+        fontSize: '1.3rem',
+      }}>
+        <h2 style={{
+          fontFamily: 'Cheri, sans-serif',
+          textAlign: 'center',
+          marginBottom: '1rem',
+          WebkitTextStroke: '2px #EDAFB8',
         }}>
+          💖 GRWM Chatbot 💖
+        </h2>
+
+        {/* Chatbox container */}
+        <div style={{
+          flexGrow: 1,
+          overflowY: 'auto',
+          paddingRight: '12px',
+          lineHeight: '1.5',
+          textAlign: 'left',
+          userSelect: 'text',
+          whiteSpace: 'pre-wrap',
+          wordWrap: 'break-word',
+          marginBottom: '1rem',
+          padding: '0.5rem',
+          border: '2px solid #cc3366',
+          borderRadius: '20px',
+          backgroundColor: 'rgba(255 182 193 / 0.2)',
+        }}>
+          {chatHistory.length === 0 && (
+            <p style={{
+              color: '#cc3366',
+              textAlign: 'center',
+              fontStyle: 'italic',
+              userSelect: 'none',
+              marginTop: '1rem',
+            }}>
+              bot is waiting for you...
+            </p>
+          )}
+          {chatHistory.map((msg, idx) => (
+            <div key={idx} style={{
+              backgroundColor: msg.sender === 'bot' ? 'rgba(255 228 236 / 0.7)' : 'rgba(255 182 193 / 0.5)',
+              padding: '0.75rem 1rem',
+              margin: '0.5rem 0',
+              marginBottom: '1rem',
+              alignSelf: msg.sender === 'bot' ? 'flex-start' : 'flex-end',
+              borderRadius: msg.sender === 'bot' ? '30px 30px 30px 10px' : '30px 30px 10px 30px',
+              boxShadow: '0 0 8px #ff66b2',
+              color: '#900048',
+              fontWeight: '600',
+              maxWidth: '75%',
+            }}>
+              {msg.sender === 'bot' ? 'bot: ' : 'you: '}{msg.text}
+            </div>
+          ))}
+        </div>
+
+        {/* Input and Send button */}
+        <div style={{ display: 'flex', gap: '1rem' }}>
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your message..."
-            style={{
-              padding: '16px',
-              width: '100%',
-              borderRadius: '20px',
-              border: '2px solid #ff66b2',
-              outline: 'none',
-              fontSize: '1.3rem',
-              boxShadow: 'inset 0 0 12px #ffb6c1',
-              marginBottom: '1.5rem',
-              fontWeight: '600',
-              color: '#333',
-              backgroundColor: 'rgba(255 182 193 / 0.4)',
-              backdropFilter: 'blur(8px)',
-            }}
+            placeholder="type your message..."
             aria-label="Message input"
             onKeyDown={(e) => { if (e.key === 'Enter') sendMessage(); }}
+            style={{
+              flex: 1,
+              padding: '0.75rem',
+              borderRadius: '20px',
+              border: '2px solid #ff66b2',
+              fontSize: '1rem',
+              boxShadow: 'inset 0 0 8px #ffb6c1',
+              marginBottom: '1rem',
+              color: '#333',
+              backgroundColor: '#fff0f5',
+              backdropFilter: 'blur(8px)',
+            }}
           />
           <button
             onClick={sendMessage}
             style={{
               background: 'linear-gradient(45deg, #ff66b2, #ff99cc)',
               border: 'none',
-              padding: '16px 25px',
+              padding: '0.75rem 1.25rem',
               borderRadius: '20px',
               color: 'white',
               fontWeight: 'bold',
               fontSize: '1.3rem',
               cursor: 'pointer',
               boxShadow: '0 8px 20px #ff66b2',
-              transition: 'all 0.3s ease',
-              width: '100%',
-              marginBottom: '2rem',
+              transition: 'all 0.3s ease-in-out',
+              marginBottom: '1rem',
             }}
             aria-label="Send message"
           >
-            Send
+            send
           </button>
-
-          <div style={{
-            flexGrow: 1,
-            overflowY: 'auto',
-            paddingRight: '12px',
-            lineHeight: '1.5',
-            textAlign: 'left',
-            userSelect: 'text',
-            whiteSpace: 'pre-wrap',
-            wordWrap: 'break-word',
-          }}>
-            {chatHistory.length === 0 && (
-              <p style={{
-                color: '#cc3366',
-                fontWeight: '600',
-                fontStyle: 'italic',
-                userSelect: 'none',
-                marginTop: '1rem',
-                textAlign: 'center'
-              }}>
-                Bot is waiting for you...
-              </p>
-            )}
-
-            {chatHistory.map((msg, idx) => (
-              <div key={idx} style={{
-                backgroundColor: msg.sender === 'bot' ? 'rgba(255 228 236 / 0.7)' : 'rgba(255 182 193 / 0.5)',
-                padding: '18px 24px',
-                borderRadius: msg.sender === 'bot' ? '30px 30px 30px 10px' : '30px 30px 10px 30px',
-                boxShadow: '0 0 15px #ff66b2',
-                maxWidth: '85%',
-                marginBottom: '1rem',
-                color: '#900048',
-                alignSelf: msg.sender === 'bot' ? 'flex-start' : 'flex-end',
-                fontWeight: '600',
-              }}>
-                {msg.sender === 'bot' ? 'Bot: ' : 'You: '}{msg.text}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </div>
