@@ -17,12 +17,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-<<<<<<< HEAD
-# Load your OpenAI API key securely from environment variable
-openai_api_key = os.getenv("OPENAI_API_KEY")
-=======
-openai_api_key = "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"
->>>>>>> 29cde38 (Got bot to work)
+
+openai_api_key = "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"
+
 client = OpenAI(api_key=openai_api_key)
 
 class Message(BaseModel):
