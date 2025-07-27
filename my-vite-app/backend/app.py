@@ -4,23 +4,23 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from openai import OpenAI
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
+client = OpenAI(api_key=openai_api_key)
 
 app = FastAPI()
 
-# Replace * with your Vercel frontend URL if you want to restrict it
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Optionally: ["https://your-vercel-site.vercel.app"]
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-openai_api_key = "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"
-
-client = OpenAI(api_key=openai_api_key)
 
 class Message(BaseModel):
     message: str

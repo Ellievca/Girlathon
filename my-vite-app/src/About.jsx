@@ -36,7 +36,7 @@ function RetroWindowButtons() {
   );
 }
 
-function BioCard({ name, role, desc }) {
+function BioCard({ name, role, desc, favorites=[], linkedin }) {
   return (
     <div
       style={{
@@ -54,6 +54,34 @@ function BioCard({ name, role, desc }) {
       <h3 style={{ color: '#ff69b4', fontSize: '1.4rem' }}>{name}</h3>
       <p style={{ fontStyle: 'italic', fontSize: '0.95rem' }}>{role}</p>
       <p style={{ marginTop: '0.5rem', fontSize: '0.9rem' }}>{desc}</p>
+
+      {favorites.length > 0 && (
+        <div style={{ marginTop: '0.75rem' }}>
+          <h4 style={{ color: '#d63384', fontSize: '1rem', marginBottom: '0.3rem' }}>Favorite beauty products 💅</h4>
+          <ul style={{ listStyleType: '💖', paddingLeft: '1.2rem', fontSize: '0.85rem', textAlign: 'left' }}>
+            {favorites.map((item, index) => (
+              <li key={index} style={{ marginBottom: '0.25rem' }}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {linkedin && (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block',
+            marginTop: '0.75rem',
+            color: '#0077b5',
+            textDecoration: 'none',
+            fontSize: '0.85rem',
+          }}
+        >
+          🔗 LinkedIn
+        </a>
+      )}
     </div>
   );
 }
@@ -108,26 +136,34 @@ function About() {
             name="Ellie Carron"
             role="Frontend Dev 👩‍💻"
             desc="Ellie designed the aesthetic, created the layout, and built the chatbot UI with React + Vite!"
+            favorites={["TIRTIR Mask Fit Cushion", "Tower 28 Lip Gloss", "Fenty Diamond Bomb Highlighter"]}
+            linkedin="https://www.linkedin.com/in/elliecarron/"
           />
           <BioCard
             name="Aneesha Nayak"
             role="Backend AI Dev 🛠"
             desc="Aneesha implemented the FastAPI backend and made the chatbot respond with OpenAI magic."
+            favorites={["Sol de Janeiro Cheirosa 62", "Elf Lash 'N Roll Mascara", "Sephora Coconut Face Masks"]}
+            linkedin="https://www.linkedin.com/in/aneeshanayak/"
           />
           <BioCard
             name="Ava Romero"
             role="UI/UX Designer 🎨"
             desc="Ava styled each page with love, pastel vibes, and perfect pixel details to match the theme."
+            favorites={["Fenty Eaze Drop Skin Tint", "Eloise Bloom Blush", "Afterglow Lip Balm"]}
+            linkedin="https://www.linkedin.com/in/ava-romero-643672291/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
           />
           <BioCard
             name="Vianna Huynh"
             role="Full Stack Floater 🌈"
             desc="Vianna contributed across frontend and backend, helping glue it all together with charm!"
+            favorites={["Fenty Skin Tint", "Merit Blush", "Merit Concealer"]}
+            linkedin="https://www.linkedin.com/in/viannahuynh/"
           />
         </div>
 
         {/* Tech stack */}
-        <div style={{ marginTop: '3rem', textAlign: 'left', maxWidth: '600px', margin: '3rem auto 1rem auto' }}>
+        <div style={{ marginTop: '3rem', textAlign: 'center', maxWidth: '450px', margin: '3rem auto 1rem auto' }}>
           <h2 style={{ color: '#ff69b4' }}>💻 How We Built This</h2>
           <ul style={{ listStyleType: 'square', paddingLeft: '1.5rem', marginTop: '1rem', fontSize: '1rem' }}>
             <li><b>React + Vite</b> for a super fast, modern frontend</li>

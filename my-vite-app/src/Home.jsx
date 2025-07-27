@@ -45,7 +45,7 @@ function Home() {
         margin: '1rem auto',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: 'var(--color-background)',
+        backgroundColor: '#fce4ec',
         color: 'white',
         borderRadius: '12px',
         boxShadow: '0 0 15px rgba(0,0,0,0.5)',
@@ -81,13 +81,13 @@ function Home() {
           padding: '1rem',
         }}
       >
-        <h1 style={{ fontFamily: 'Cheri, sans-serif', WebkitTextStroke: '3px #EDAFB8', marginBottom: '1rem' }}>home page!</h1>
+        <h1 style={{ fontFamily: 'Cheri, sans-serif', fontSize: '7rem', marginBottom: '1rem', background: 'linear-gradient(45deg, #ff9aeb, #ffd6f7, #ffffff, #ff9aeb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', animation: 'glitter 2s infinite linear', backgroundSize: '400%', WebkitTextStroke: '3px #EDAFB8', cursor: 'url(/cursor_icon.png), auto' }}>home page!</h1>
         <Link to="/chatbot">
           <button
             style={{
               padding: '0.75rem 1.5rem',
               fontFamily: 'Cheri, sans-serif',
-              fontSize: '1.2rem',
+              fontSize: '3rem',
               backgroundColor: 'var(--color-accent)',
               color: '#FFFFFF',
               border: 'none',

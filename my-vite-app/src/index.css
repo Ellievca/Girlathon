@@ -76,3 +76,12 @@ button:focus-visible {
 body {
   cursor: url('/pngs/cursor_icon.png') 0 0, auto;
 }
+
+@keyframes glitter {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
