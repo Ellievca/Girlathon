@@ -36,23 +36,46 @@ function RetroWindowButtons() {
   );
 }
 
+function BioCard({ name, role, desc }) {
+  return (
+    <div
+      style={{
+        background: '#fff0f5',
+        padding: '1rem',
+        borderRadius: '10px',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+        margin: '1rem',
+        maxWidth: '250px',
+        textAlign: 'center',
+        fontFamily: 'Comic Sans MS, cursive',
+        border: '2px solid #ffb6c1',
+      }}
+    >
+      <h3 style={{ color: '#ff69b4', fontSize: '1.4rem' }}>{name}</h3>
+      <p style={{ fontStyle: 'italic', fontSize: '0.95rem' }}>{role}</p>
+      <p style={{ marginTop: '0.5rem', fontSize: '0.9rem' }}>{desc}</p>
+    </div>
+  );
+}
+
 function About() {
   return (
     <div 
       style={{
-        height: '75vh',
+        height: 'fit-content',
         width: '70vw',
         margin: '1rem auto',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: 'var(--color-background)',
-        color: 'white',
+        backgroundColor: '#fce4ec',
+        color: '#4a4a4a',
         borderRadius: '12px',
         boxShadow: '0 0 15px rgba(0,0,0,0.5)',
         overflow: 'hidden',
+        fontFamily: 'Comic Sans MS, cursive, sans-serif',
       }}
     >
-      {/* Top bar with Windows buttons */}
+      {/* Top bar */}
       <div
         style={{
           height: '40px',
@@ -67,22 +90,58 @@ function About() {
         }}
       >
         <RetroWindowButtons />
+        <span style={{ fontWeight: 'bold' }}>💽 about_the_team.txt</span>
       </div>
 
       {/* Page content */}
-      <div
-        style={{
-          flex: 1,
-          padding: '1rem',
-          textAlign: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <h1 style={{ fontFamily: 'Cheri, sans-serif', WebkitTextStroke: '3px #EDAFB8', marginBottom: '1rem' }}>about page!</h1>
-        <p>hi we're team girlathon and we made this for cs girlies hackathon!</p>
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '2.5rem', color: '#ff69b4', textShadow: '2px 2px #fff' }}>
+          💖 meet the girlies 💖
+        </h1>
+        <p style={{ marginTop: '1rem', fontSize: '1.2rem', maxWidth: '600px', margin: 'auto' }}>
+          We’re <b>Team Girlathon</b> — coders, designers, and beauty lovers building a glam AI chatbot for the CS Girlies Hackathon 💅
+        </p>
+
+        {/* Team bios */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: '2rem' }}>
+          <BioCard
+            name="Ellie Carron"
+            role="Frontend Dev 👩‍💻"
+            desc="Ellie designed the aesthetic, created the layout, and built the chatbot UI with React + Vite!"
+          />
+          <BioCard
+            name="Aneesha Nayak"
+            role="Backend AI Dev 🛠"
+            desc="Aneesha implemented the FastAPI backend and made the chatbot respond with OpenAI magic."
+          />
+          <BioCard
+            name="Ava Romero"
+            role="UI/UX Designer 🎨"
+            desc="Ava styled each page with love, pastel vibes, and perfect pixel details to match the theme."
+          />
+          <BioCard
+            name="Vianna Huynh"
+            role="Full Stack Floater 🌈"
+            desc="Vianna contributed across frontend and backend, helping glue it all together with charm!"
+          />
+        </div>
+
+        {/* Tech stack */}
+        <div style={{ marginTop: '3rem', textAlign: 'left', maxWidth: '600px', margin: '3rem auto 1rem auto' }}>
+          <h2 style={{ color: '#ff69b4' }}>💻 How We Built This</h2>
+          <ul style={{ listStyleType: 'square', paddingLeft: '1.5rem', marginTop: '1rem', fontSize: '1rem' }}>
+            <li><b>React + Vite</b> for a super fast, modern frontend</li>
+            <li><b>FastAPI (Python)</b> for backend API & chatbot logic</li>
+            <li><b>OpenAI GPT-3.5</b> for glam responses</li>
+            <li><b>Render</b> for backend hosting</li>
+            <li><b>Vercel</b> for frontend deployment</li>
+            <li><b>Figma + Canva</b> for mockups & icon design</li>
+          </ul>
+        </div>
+
+        <p style={{ marginTop: '2rem', fontSize: '0.9rem', color: '#999' }}>
+          Built with ☕, sparkle ✨, and teamwork 💗
+        </p>
       </div>
     </div>
   );
